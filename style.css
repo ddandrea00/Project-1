@@ -1,0 +1,55 @@
+#mainstage{
+background-color: red;
+height:100%;
+width:50vh;
+margin-left: auto;
+margin-right: auto;
+border: 1px solid black;
+}
+
+#header{
+  height:10vh;
+  text-align: center;
+  border: 1px solid black;
+  vertical-align: text-top;
+}
+
+#question-box{
+  text-align: center;
+  height:40vh;
+  background-color: yellow;
+  border: 1px solid black;
+}
+
+.answer-boxes{
+  height:50vh;
+  background-color: orange
+}
+
+#answerA{
+  height:25%;
+  text-align: center;
+  background-color: green;
+  border: 1px solid black;
+}
+
+#answerB{
+  height:25%;
+  text-align: center;
+  background-color: grey;
+  border: 1px solid black;
+}
+
+#answerC{
+  height:25%;
+  text-align: center;
+  background-color: blue;
+  border: 1px solid black;
+}
+
+#answerD{
+  height:25%;
+  text-align: center;
+  background-color: purple;
+  border: 1px solid black;
+}
