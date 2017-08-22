@@ -1,10 +1,10 @@
+var questionBox = $("#question-box")
 var currentQuestion = $("#question-box h3")
 var choiceA = $("#answerA")
 var choiceB = $("#answerB")
 var choiceC = $("#answerC")
 var choiceD = $("#answerD")
 var answerBoxes = $(".answer-boxes")
-var startButton = $(".answer-boxes #answerD")
 
 var questions = [{
   question: "What day of the week is the Biblical Sabbath (7th Day)?",
@@ -34,10 +34,20 @@ function play() {
   answerBoxes.on('click', function(){
     console.log($(this).text())
     if ($(this).text() === questions[0].answer){
-
-          console.log("You are correct!")
+          answerBoxes.css("color", "green")
+          questionBox.css("background-color", "green")
+          currentQuestion.css("color", "white")
+          currentQuestion.text("CORRECT!")
+          console.log("You are correct!");
     }else{
-          console.log("You are wrong")
+          answerBoxes.css("color", "red")
+          questionBox.css("background-color", "red")
+          currentQuestion.css("color", "white")
+          currentQuestion.text("WRONG!")
+          console.log("You are wrong!")
     }
+
+
+
   })
 }
