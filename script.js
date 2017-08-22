@@ -18,7 +18,7 @@ var questions = [{
   hint: "Two of the choices are not even in the Bible."
 }]
 
-choiceD.on('click', play);
+choiceA.on('click', play);
 
 function play() {
 //Display question and answer choices on screen
