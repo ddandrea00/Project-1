@@ -1,3 +1,7 @@
+body{
+  background-image: url("images/background5.jpg");
+  background-size: auto;
+}
 #mainstage{
 background-color: red;
 height:100%;
@@ -11,7 +15,10 @@ border: 1px solid black;
   height:10vh;
   text-align: center;
   border: 1px solid black;
-  vertical-align: text-top;
+}
+
+#header h1{
+  padding-top: 0;
 }
 
 #question-box{
@@ -19,6 +26,12 @@ border: 1px solid black;
   height:40vh;
   background-color: yellow;
   border: 1px solid black;
+}
+
+#question-box h3{
+  padding-top: 25%;
+  padding-right: 2px;
+  padding-left: 2px;
 }
 
 .answer-boxes{
@@ -33,11 +46,19 @@ border: 1px solid black;
   border: 1px solid black;
 }
 
+#answerA p{
+  padding-top: 5%;
+}
+
 #answerB{
   height:25%;
   text-align: center;
   background-color: grey;
   border: 1px solid black;
+}
+
+#answerB p{
+  padding-top: 5%;
 }
 
 #answerC{
@@ -47,9 +68,17 @@ border: 1px solid black;
   border: 1px solid black;
 }
 
+#answerC p{
+  padding-top: 5%;
+}
+
 #answerD{
   height:25%;
   text-align: center;
   background-color: purple;
   border: 1px solid black;
+}
+
+#answerD p{
+  padding-top: 5%;
 }
