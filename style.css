@@ -2,7 +2,7 @@ body{
 }
 #mainstage{
 height:100%;
-width:100%;
+width: 100%;
 resize: both;
 overflow: hidden;
 }
@@ -28,19 +28,13 @@ font-size: 48px;
 
 #question-box{
   text-align: center;
-  height:40vh;
+  height:30vh;
   font-family: 'Julius Sans One', sans-serif;
   color: white;
   border: 1px solid white;
-}
+  padding-top: 25%;
 }
 
-#question-box h3{
-  font-size: 26px;
-  padding-top: 25%;
-  margin-left: 2px;
-  margin-right:2px;
-}
 
 .answerBox{
  height: 50vh;
@@ -48,12 +42,13 @@ font-size: 48px;
 }
 
 .answer-boxes{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: 'Julius Sans One', sans-serif;
   color:white;
   position:static;
   height:25%;
   text-align: center;
   border: 1px solid white;
-}
-
 }
