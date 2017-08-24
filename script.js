@@ -159,6 +159,7 @@ var randomize = questions[Math.floor(questions.length * Math.random())];
           currentQuestion.text("WRONG!")
           nextButton.show()
           nextButton.click(function(){
+            answerBoxes.ready()
             play();
             answerBoxes.css("color", "white")
             questionBox.css("background-color", "initial")
