@@ -103,9 +103,14 @@ var questions = [{
 nextButton.hide()
 choiceA.on('click', play);
 choiceB.on('click', instructions)
-choiceC.on('click', )
+choiceC.on('click', function(){
+  window.location.href="settings.html"
+})
+choiceD.on('click', about)
 
 function play() {
+  choiceA.off()
+  choiceC.off()
 //Randomize question
 var randomize = questions[Math.floor(questions.length * Math.random())];
 //Display question and answer choices on screen
@@ -117,22 +122,28 @@ var randomize = questions[Math.floor(questions.length * Math.random())];
 //All choices need click listners. If correct choice is clicked than change css background
 //color to green and text in question box to 'Correct'. If incorrect choice is clicked
 //then change css background of that to red and display 'Wrong' in question box.
+
   answerBoxes.on('click', function(){
-    console.log($(this).text())
+      answerBoxes.off()
+      console.log($(this).text())
     if ($(this).text() == randomize.answer){
+      //$(this).css("background-color", "white")
           answerBoxes.css("color", "green")
           questionBox.css("background-color", "green")
           currentQuestion.css("color", "white")
           currentQuestion.text("CORRECT!")
           nextButton.show()
           nextButton.click(function(){
+            answerBoxes.ready()
               play();
               answerBoxes.css("color", "white")
               questionBox.css("background-color", "initial")
               currentQuestion.css("color", "white")
               nextButton.hide()
+
           })
     }else{
+          //$(this).css("background-color", "white")
           answerBoxes.css("color", "red")
           questionBox.css("background-color", "red")
           currentQuestion.css("color", "white")
@@ -148,12 +159,11 @@ var randomize = questions[Math.floor(questions.length * Math.random())];
         }
      })
    }
-
 function instructions() {
     currentQuestion.text("Test your Bible knowledge by answering as many questions correctly as you can.")
 }
-
-
-
-
 })
+
+function about() {
+    currentQuestion.text("Magically developed by some guy named Drew.")
+}

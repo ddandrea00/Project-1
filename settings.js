@@ -1,12 +1,12 @@
+var choiceA = $("#answerA")
+var choiceB = $("#answerB")
+var choiceC = $("#answerC")
 var nextButton = $('.nextButton')
+
+
 nextButton.hide()
 
-  choiceA.on("click", function(){
-
-  })
-  choiceB.on("click", function(){
-
-  })
-  choiceC.on("click", function(){
-
-  })
+$('.answer-boxes').click(function(){
+    localStorage.setItem("difficulty", $(this).text() )
+    window.location.href="index.html"
+})
