@@ -130,12 +130,9 @@ var randomize = questions[Math.floor(questions.length * Math.random())];
 
   answerBoxes.on('click', function(){
       answerBoxes.off()
-      console.log($(this).text())
     if ($(this).text() == randomize.answer){
           levelCount++
           level.text(levelCount)
-          console.log(levelCount)
-    //  $(this).css("background-color", "white")
           answerBoxes.css("color", "green")
           questionBox.css("background-color", "green")
           currentQuestion.css("color", "white")
@@ -151,8 +148,6 @@ var randomize = questions[Math.floor(questions.length * Math.random())];
 
           })
     }else{
-        //  $(this).css("background-color", "white")
-          console.log(wrong)
           answerBoxes.css("color", "red")
           questionBox.css("background-color", "red")
           currentQuestion.css("color", "white")
