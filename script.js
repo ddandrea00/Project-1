@@ -7,6 +7,9 @@ var choiceC = $("#answerC")
 var choiceD = $("#answerD")
 var answerBoxes = $(".answer-boxes")
 var nextButton = $('.nextButton')
+var mainLevel = $(".level")
+var level = $(".level span")
+var levelCount = 0
 
 var questions = [{
   question: "What day of the week is the Biblical Sabbath (7th Day)?",
@@ -99,7 +102,7 @@ var questions = [{
     answer: "Mark's Upper Room",
     hint: "Isa 33:20"
 }]
-
+mainLevel.hide()
 nextButton.hide()
 choiceA.on('click', play);
 choiceB.on('click', instructions)
@@ -109,6 +112,8 @@ choiceC.on('click', function(){
 choiceD.on('click', about)
 
 function play() {
+  mainLevel.show()
+  nextButton.off()
   choiceA.off()
   choiceC.off()
 //Randomize question
@@ -127,7 +132,10 @@ var randomize = questions[Math.floor(questions.length * Math.random())];
       answerBoxes.off()
       console.log($(this).text())
     if ($(this).text() == randomize.answer){
-      //$(this).css("background-color", "white")
+          levelCount++
+          level.text(levelCount)
+          console.log(levelCount)
+    //  $(this).css("background-color", "white")
           answerBoxes.css("color", "green")
           questionBox.css("background-color", "green")
           currentQuestion.css("color", "white")
@@ -143,7 +151,8 @@ var randomize = questions[Math.floor(questions.length * Math.random())];
 
           })
     }else{
-          //$(this).css("background-color", "white")
+        //  $(this).css("background-color", "white")
+          console.log(wrong)
           answerBoxes.css("color", "red")
           questionBox.css("background-color", "red")
           currentQuestion.css("color", "white")
@@ -162,8 +171,8 @@ var randomize = questions[Math.floor(questions.length * Math.random())];
 function instructions() {
     currentQuestion.text("Test your Bible knowledge by answering as many questions correctly as you can.")
 }
-})
 
 function about() {
     currentQuestion.text("Magically developed by some guy named Drew.")
 }
+})
