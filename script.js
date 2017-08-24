@@ -1,4 +1,4 @@
-$(function(){
+$(function start(){
 var questionBox = $("#question-box")
 var currentQuestion = $("#question-box h3")
 var choiceA = $("#answerA")
@@ -39,28 +39,81 @@ var questions = [{
     answer: "Moses",
     hint: "Numbers"
 },{
-    question: "Where is God's dwelling place on earth in the Bible?",
-    choices: ["Capernum","Zion","Egypt","Galilee"],
-    answer: "Zion",
+    question: "How many books are in the Bible",
+    choices: ["27","49","66","37"],
+    answer: "66",
+    hint: "Count"
+},{
+    question: "Jesus Christ is the High Priest in the order of?",
+    choices: ["Moses","Melchizedek","Aaron","David"],
+    answer: "Melchizedek",
+    hint: "Hebrews"
+},{
+    question: "Where did God appear to Abraham?",
+    choices: ["Jerusalem","Sodom and Gomorrah","Mt. Sinai","Trees of Mamre"],
+    answer: "Trees of Mamre",
+    hint: "Genesis"
+},{
+    question: "What is inside the ark of the covenant",
+    choices: ["Staff of Moses","Two Stone Tablets","Golden Censer","None of the Above"],
+    answer: "Two Stone Tablets",
+    hint: "1 Kings 8:9"
+},{
+    question: "Which of these items is not in the Holy Place?",
+    choices: ["Golden Lampstand","Altar of Incense","Table of Showbread","Bronze Basins"],
+    answer: "Bronze Basins",
+    hint: "Isa 33:20"
+},{
+    question: "Which of these items is not in the Most Holy Place?",
+    choices: ["Ark of the Covenant","Aaron's Staff","Altar of Incesne","None of the Above"],
+    answer: "Altar of Incesne",
+    hint: "Isa 33:20"
+},{
+    question: "What is the name of Moses' mother?",
+    choices: ["Miriam","Rebecca","Ruth","Jochebed"],
+    answer: "Jochebed",
+    hint: "Isa 33:20"
+},{
+    question: "Where did God command Abraham to sacrifice Isaac?",
+    choices: ["Mt. Sinai","Horeb","Egypt","Mt. Moriah"],
+    answer:"Mt. Moriah",
+    hint: "Isa 33:20"
+},{
+    question: "How old was Sarah when she died?",
+    choices: ["114","87","127","49"],
+    answer: "127",
+    hint: "Genesis 23:1"
+},{
+    question: "Where was Apostle John when writing the book of Revelation?",
+    choices: ["Rome","Patmos","Jerusalem","Samaria"],
+    answer: "Patmos",
+    hint: "Rev 1"
+},{
+    question: "But the Jersalem that is above is free and she is our? - Galatians 4:26",
+    choices: ["Hope","Glory","Mother","Savior"],
+    answer: "Mother",
+    hint: "Isa 33:20"
+},{
+    question: "Where did Jesus celebrate the Passover with his disciples?",
+    choices: ["Jerusalem Temple","Mark's Upper Room","Mt. Hermon","None of the above"],
+    answer: "Mark's Upper Room",
     hint: "Isa 33:20"
 }]
 
 nextButton.hide()
-
 choiceA.on('click', play);
+choiceB.on('click', instructions)
+choiceC.on('click', )
 
 function play() {
 //Randomize question
-
 var randomize = questions[Math.floor(questions.length * Math.random())];
-
 //Display question and answer choices on screen
   currentQuestion.text(randomize.question)
   choiceA.text(randomize.choices[0]);
   choiceB.text(randomize.choices[1]);
   choiceC.text(randomize.choices[2]);
   choiceD.text(randomize.choices[3]);
-
 //All choices need click listners. If correct choice is clicked than change css background
 //color to green and text in question box to 'Correct'. If incorrect choice is clicked
 //then change css background of that to red and display 'Wrong' in question box.
@@ -78,9 +131,7 @@ var randomize = questions[Math.floor(questions.length * Math.random())];
               questionBox.css("background-color", "initial")
               currentQuestion.css("color", "white")
               nextButton.hide()
-
           })
-
     }else{
           answerBoxes.css("color", "red")
           questionBox.css("background-color", "red")
@@ -93,13 +144,16 @@ var randomize = questions[Math.floor(questions.length * Math.random())];
             questionBox.css("background-color", "initial")
             currentQuestion.css("color", "white")
             nextButton.hide()
+            })
+        }
+     })
+   }
 
-
-          })
-    }
-
-
-
-  })
+function instructions() {
+    currentQuestion.text("Test your Bible knowledge by answering as many questions correctly as you can.")
 }
+
+
+
+
 })

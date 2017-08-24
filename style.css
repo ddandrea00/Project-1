@@ -1,44 +1,48 @@
 body{
-}
-#mainstage{
-height:100%;
-width: 100%;
-resize: both;
-overflow: hidden;
-}
-
-#mainstage-bk{
+  margin:0;
+  height:-webkit-fill-available;
+  width: -webkit-fill-available;
+  overflow:hidden;
   background-image: url("images/background12.jpg");
   opacity: 0.7;
   background-size: cover;
 }
 
+#mainstage{
+height:100%;
+width: 100%;
+resize: both;
+}
+
+#mainstage-bk{
+
+}
+
 #header{
-  height:100%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   color: white;
   font-family: 'Julius Sans One', sans-serif;
-  border: 1px solid white;
 }
 
 #header h1{
-padding-top: 25px;
 font-size: 48px;
 }
 
 #question-box{
+  display: flex;
   text-align: center;
-  height:30vh;
+  justify-content: center;
+  flex-flow: column;
   font-family: 'Julius Sans One', sans-serif;
   color: white;
-  border: 1px solid white;
-  padding-top: 25%;
+  height: 30vh;
 }
 
-
 .answerBox{
- height: 50vh;
- border: 1px solid white;
+  display: flex;
+  flex-flow: column;
+  height: 30vh;
 }
 
 .answer-boxes{
@@ -48,7 +52,17 @@ font-size: 48px;
   font-family: 'Julius Sans One', sans-serif;
   color:white;
   position:static;
-  height:25%;
   text-align: center;
-  border: 1px solid white;
+  height: 25%
+}
+
+.answer-boxes:hover{
+  background-color:white;
+  color: grey;
+}
+
+.nextButton{
+  font-size: large;
+    margin-left: auto;
+    margin-right: auto;
 }
