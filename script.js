@@ -140,7 +140,7 @@ var randomize = questions[Math.floor(questions.length * Math.random())];
           nextButton.show()
           nextButton.click(function(){
             answerBoxes.ready()
-              play();
+              play()
               answerBoxes.css("color", "white")
               questionBox.css("background-color", "initial")
               currentQuestion.css("color", "white")
@@ -155,7 +155,7 @@ var randomize = questions[Math.floor(questions.length * Math.random())];
           nextButton.show()
           nextButton.click(function(){
             answerBoxes.ready()
-            play();
+            play()
             answerBoxes.css("color", "white")
             questionBox.css("background-color", "initial")
             currentQuestion.css("color", "white")
